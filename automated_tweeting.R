@@ -21,5 +21,5 @@ twitter_token <- create_token(
 for(i in 1:length(tweets)){  
     post_tweet(tweets[[i]], 
                token=twitter_token)
-    if(i<length(tweets)){Sys.sleep(time=60)}
+    if(i<length(tweets)){Sys.sleep(time=180)}
 }
