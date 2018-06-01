@@ -1,8 +1,8 @@
 # Wilson Ornithological Society Tweets
 
-I am apart of the team that tweets on behalf of the Wilson Ornithological Society. My job is to tweet about the new articles published in the Wilson Journal of Ornithology 4 times a year when the new issues come out. 
+I am a part of the team that tweets on behalf of the Wilson Ornithological Society. My job is to tweet about the new articles published in the Wilson Journal of Ornithology 4 times a year when the new issues come out. 
 
-Previously this involved around 8 hours of copying, pasting, writing tweets, and then scheduling them all by hand. I'm not a huge fan of copying and pasting, its boring and inefficient. So I've been working on figuring out a way to scrape the titles and links to the papers, and then also tweeting them, all from R. 
+Previously this involved around 8 hours of copying, pasting, writing tweets, and then scheduling them all by hand. I'm not a huge fan of copying and pasting, it's boring and inefficient. So I've been working on figuring out a way to scrape the titles and links to the papers, and then also tweeting them, all from R. 
 
 `write_wilson_tweets()` grabs the titles and urls for all the articles in the most recent issue of the Wilson Journal of Ornithology, and then pastes them together, along with the text "New in WJO:" and the #ornithology hashtag. 
 
