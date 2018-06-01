@@ -3,7 +3,7 @@ library(rtweet)
 
 # I have these saved in a .Rdata file elsewhere
 load("~/../Dropbox/wilson/key_secret.Rdata")
-source("scraping-titles-urls.R")
+source("writing_wilson_tweets.R")
 
 tweets <- write_wos_tweets()
 
