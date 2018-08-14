@@ -3,9 +3,15 @@ library(rtweet)
 
 # I have these saved in a .Rdata file elsewhere
 load("~/../Dropbox/wilson/key_secret.Rdata")
-source("writing_wilson_tweets.R")
+source("write_wilson_tweets.R")
 
 tweets <- write_wos_tweets()
+
+nchar(tweets) > 280
+
+tweets[[2]] <- "New In WJO: Density and population estimates of Rose-bellied Bunting, Cinnamon-tailed Sparrow , and Orange-breasted Bunting in the Sierra Tolistoque, Oaxaca, Mexico #ornithology http://www.bioone.org/doi/abs/10.1676/16-217.1"
+
+longertweets <- paste0(tweets,"   ")
 
 appname <- "wilson_tweets"
 
@@ -19,7 +25,7 @@ twitter_token <- create_token(
   consumer_secret = secret)
 
 for(i in 1:length(tweets)){  
-    post_tweet(tweets[[i]], 
+    post_tweet(longertweets[[i]], 
                token=twitter_token)
     if(i<length(tweets)){Sys.sleep(time=180)}
 }
