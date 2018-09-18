@@ -2,6 +2,7 @@ library(dplyr)
 library(rtweet)
 
 # I have these saved in a .Rdata file elsewhere
+# https://cran.r-project.org/web/packages/rtweet/vignettes/auth.html
 load("~/../Dropbox/wilson/key_secret.Rdata")
 source("write_wilson_tweets.R")
 
