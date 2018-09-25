@@ -1,5 +1,6 @@
 # https://github.com/aurielfournier/wilson_ornithological_society_tweets 
 
+
 library(rvest)
 library(stringr)
 library(magrittr)
@@ -12,8 +13,7 @@ write_wos_tweets <- function(){
   # https://selectorgadget.com/
   titles <- read_html(url) %>%
     html_nodes(css = ".hlFld-Title") %>%
-    html_text %>%
-    purrr::map_chr(~.x)
+    html_text() 
   
   articleurls <- read_html(url) %>%
     html_nodes(css = ".useQueryHash") %>%
@@ -27,4 +27,5 @@ write_wos_tweets <- function(){
   tweets <- paste0("New In WJO: ",titles, " #ornithology ", articleurls)
 
   return(tweets)
-  }  
+}  
+
