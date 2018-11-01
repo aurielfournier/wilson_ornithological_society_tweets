@@ -13,8 +13,6 @@ tweets <- write_wos_tweets()
 # check to make sure they are short enough
 nchar(tweets) > 280
 
-tweets[[2]] <- "New In WJO: Density and population estimates of Rose-bellied Bunting, Cinnamon-tailed Sparrow, and Orange-breasted Bunting in the Sierra Tolistoque, Oaxaca, Mexico #ornithology http://www.bioone.org/doi/abs/10.1676/16-217.1"
-
 appname <- "wilson_tweets"
 
 key <- key_secret[[1]]
@@ -26,9 +24,9 @@ twitter_token <- create_token(
   consumer_key = key,
   consumer_secret = secret)
 
-post_tweet("Birds are amazing.",token=twitter_token)
+#post_tweet("Birds are amazing. Are you ready for the September Issue of WJO? #ornithology",token=twitter_token)
 
-
+tweets <- paste0(tweets,"  ")
 
 for(i in 1:length(tweets)){  
   
