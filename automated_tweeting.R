@@ -34,5 +34,4 @@ for(i in 1:length(tweets)){
                token=twitter_token)
   
     if(i<length(tweets)){Sys.sleep(time=180)}
-
 }
