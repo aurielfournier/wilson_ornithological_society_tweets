@@ -8,6 +8,8 @@ library(rtweet)
 load("~/../Dropbox/wilson/key_secret.Rdata")
 source("write_wilson_tweets.R")
 
+
+#change out url in this function 
 tweets <- write_wos_tweets()
 
 # check to make sure they are short enough
@@ -23,6 +25,8 @@ twitter_token <- create_token(
   app = appname,
   consumer_key = key,
   consumer_secret = secret)
+
+post_tweet("Testing out a link http://wjoonline.org/doi/abs/10.1676/1559-4491-130.4.ii")
 
 post_tweet("Birds are amazing. Are you ready for the December Issue of WJO? #ornithology",token=twitter_token)
 

@@ -7,17 +7,19 @@ library(magrittr)
 
 write_wos_tweets <- function(){
   
-  url <- "http://www.bioone.org/toc/wils/current"
+  url <- "http://wjoonline.org/toc/wils/130/4"
 
   # Retrieve the individual listings
   # https://selectorgadget.com/
   titles <- read_html(url) %>%
-    html_nodes(css = ".TOCLineItemBoldText") %>%
+    html_nodes(css = ".art_title") %>%
     html_text() 
   
   articleurls <- read_html(url) %>%
-    html_nodes(css = ".TOCLineItemText3 a") %>%
-    html_attr("href") 
+    html_nodes(css = "br+ .useQueryHash") %>%
+    html_attr("href") %>% 
+    # makes it a full url
+    purrr::map_chr(~paste0("http://wjoonline.org", .x) ) 
 
   # creates each tweet 
   tweets <- paste0("New In WJO: ",titles, " #ornithology ", articleurls)
