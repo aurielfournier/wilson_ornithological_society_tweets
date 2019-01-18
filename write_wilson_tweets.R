@@ -12,16 +12,12 @@ write_wos_tweets <- function(){
   # Retrieve the individual listings
   # https://selectorgadget.com/
   titles <- read_html(url) %>%
-    html_nodes(css = ".hlFld-Title") %>%
+    html_nodes(css = ".TOCLineItemBoldText") %>%
     html_text() 
   
   articleurls <- read_html(url) %>%
-    html_nodes(css = ".useQueryHash") %>%
-    html_attr("href")  %>% 
-    # makes it a full url
-    purrr::map_chr(~paste0("http://www.bioone.org", .x) ) %>%
-    # pulls out just the abstract link
-    str_subset(pattern="abs")
+    html_nodes(css = ".TOCLineItemText3 a") %>%
+    html_attr("href") 
 
   # creates each tweet 
   tweets <- paste0("New In WJO: ",titles, " #ornithology ", articleurls)

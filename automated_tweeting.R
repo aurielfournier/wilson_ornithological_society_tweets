@@ -24,7 +24,7 @@ twitter_token <- create_token(
   consumer_key = key,
   consumer_secret = secret)
 
-#post_tweet("Birds are amazing. Are you ready for the September Issue of WJO? #ornithology",token=twitter_token)
+post_tweet("Birds are amazing. Are you ready for the December Issue of WJO? #ornithology",token=twitter_token)
 
 tweets <- paste0(tweets,"  ")
 
