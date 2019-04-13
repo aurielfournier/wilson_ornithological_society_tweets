@@ -1,0 +1,9 @@
+{
+    "path" : "~/wilson_ornithological_society_tweets",
+    "sortOrder" : [
+        {
+            "ascending" : true,
+            "columnIndex" : 2
+        }
+    ]
+}
