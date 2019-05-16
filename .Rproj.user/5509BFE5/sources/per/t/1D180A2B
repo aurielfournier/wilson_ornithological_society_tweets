@@ -5,15 +5,15 @@
     "dirty" : false,
     "encoding" : "ISO8859-1",
     "folds" : "",
-    "hash" : "0",
+    "hash" : "3665402325",
     "id" : "1D180A2B",
-    "lastKnownWriteTime" : 1555114500,
-    "last_content_update" : 1555114500660,
+    "lastKnownWriteTime" : 1555248410,
+    "last_content_update" : 1555248410593,
     "path" : "~/wilson_ornithological_society_tweets/automated_tweeting.R",
     "project_path" : "automated_tweeting.R",
     "properties" : {
-        "cursorPosition" : "16,0",
-        "scrollLine" : "14"
+        "cursorPosition" : "0,0",
+        "scrollLine" : "0"
     },
     "relative_order" : 1,
     "source_on_save" : false,
