@@ -1,0 +1,63 @@
+
+theme_custom <- function (){
+  theme(axis.text.x = element_text(size = 12, color = "black"), 
+        axis.text.y = element_text(size = 12, color = "black"), 
+        axis.title.y = element_text(size = 20), 
+        plot.background = element_rect(fill="white", color="black"), 
+        panel.border = element_blank(), 
+        panel.grid.major = element_line(colour = NA), 
+        panel.grid.minor = element_line(colour = NA), 
+        title = element_text(size = 20), 
+        panel.background = element_rect(fill = "white"), 
+        axis.line.x = element_line(colour = "black"), 
+        axis.line.y = element_line(colour = "black"), 
+        strip.text = element_text(size = 15))}
+
+library(rgdal)
+library(maptools)
+library(tidyverse)
+library(gridExtra)
+library(maps)
+library(grid)
+library(sp)
+#library(auriel)
+
+usa <- readRDS("USA_adm1.rds")
+can <- readRDS("CAN_adm1.rds")
+mex <- readRDS("MEX_adm1.rds")
+sewagelagoons <- data.frame(lat=30.504267, long=-88.799456, group=1)
+
+ms <- usa[usa$NAME_1=="Mississippi",]
+
+inset <- ggplot()+
+  geom_polygon(data=can,aes(x=long,y=lat,group=group), col="black", fill="white")+
+  geom_polygon(data=mex,aes(x=long,y=lat,group=group), col="black", fill="white")+
+  geom_polygon(data=usa,aes(x=long,y=lat,group=group), col="black", fill="white")+
+  geom_polygon(data=ms, aes(x=long,y=lat,group=group), col="black", fill="black")+
+  coord_map("albers",lat0=25, lat1=60,xlim=c(-125,-70),ylim=c(25,57))+
+  theme_custom()+
+  theme(axis.title.y=element_blank(),
+        axis.title.x=element_blank())+
+  scale_x_continuous(breaks=c(-120,-100,-80))
+
+(mainmap <- ggplot()+
+    geom_polygon(data=ms, aes(x=long,y=lat,group=group), col="black", fill="grey")+
+    geom_point(data=sewagelagoons, aes(x=long,y=lat,group=group), col="black", fill="black", size=10)+
+    theme_custom()+
+    coord_map("albers",lat0=25, lat1=60,xlim=c(-89.9,-88.3),ylim=c(30.8,30.1))+
+    theme(axis.text.x=element_blank(),
+          axis.text.y=element_blank(),
+          axis.title.x=element_blank(),
+          axis.title.y=element_blank(),
+          axis.line.x=element_blank(),
+          axis.line.y=element_blank(),
+          axis.ticks.x = element_blank(),
+          axis.ticks.y = element_blank()))
+
+jpeg(file="figure_study_area.jpeg", width=150, height=100, units="mm", res=600)  
+grid.newpage()
+vpb_ <- viewport(width = 1, height = 1, x = 0.5, y = 0.5)  # the larger map
+vpa_ <- viewport(width = 0.4, height = 0.4, x = 0.18, y = 0.7)  # the inset 
+print(mainmap, vp = vpb_)
+print(inset, vp = vpa_)
+dev.off()  

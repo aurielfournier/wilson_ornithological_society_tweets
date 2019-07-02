@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1561989981545.000,
+    "dirty" : false,
+    "encoding" : "ISO8859-1",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "541F5CBE",
+    "lastKnownWriteTime" : 1561990265,
+    "last_content_update" : 1561990265712,
+    "path" : "~/wilson_ornithological_society_tweets/automated_tweeting.R",
+    "project_path" : "automated_tweeting.R",
+    "properties" : {
+        "cursorPosition" : "35,1",
+        "scrollLine" : "0"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

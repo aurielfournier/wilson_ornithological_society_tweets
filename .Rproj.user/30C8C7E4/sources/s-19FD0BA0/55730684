@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1561989975329.000,
+    "dirty" : false,
+    "encoding" : "ISO8859-1",
+    "folds" : "",
+    "hash" : "797581469",
+    "id" : "55730684",
+    "lastKnownWriteTime" : 1560191023,
+    "last_content_update" : 1560191023,
+    "path" : "~/wilson_ornithological_society_tweets/write_wilson_tweets_bioone.R",
+    "project_path" : "write_wilson_tweets_bioone.R",
+    "properties" : {
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
